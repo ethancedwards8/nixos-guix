@@ -1,5 +1,4 @@
 { config, pkgs, lib, ... }:
-
 let
   cfg = config.services.guix;
 
@@ -12,10 +11,12 @@ let
   };
 
   guixBuildUsers = numberOfUsers:
-    builtins.listToAttrs (map (user: {
-      name = user.name;
-      value = user;
-    }) (builtins.genList guixBuildUser numberOfUsers));
+    builtins.listToAttrs (map
+      (user: {
+        name = user.name;
+        value = user;
+      })
+      (builtins.genList guixBuildUser numberOfUsers));
 
   guixEnv = {
     GUIX_STATE_DIRECTORY = "/var/guix";
@@ -29,7 +30,8 @@ let
     (lib.mapAttrsToList (k: v: "export ${k}=${v}") guixEnv)}
     exec ${cfg.package}/bin/guix $@
   '';
-in {
+in
+{
   options.services.guix = with lib; {
     enable = mkEnableOption "the guix daemon and init /gnu/store";
 
