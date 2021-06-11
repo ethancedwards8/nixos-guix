@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, guile, sqlite, autoreconfHook, pkg-config, texinfo }:
+{ lib, stdenv, fetchurl, guile, sqlite, autoreconfHook, pkg-config, texinfo }:
 
 stdenv.mkDerivation rec {
   pname = "guile-sqlite3";
@@ -19,7 +19,7 @@ stdenv.mkDerivation rec {
   buildInputs = [ guile ];
   propagatedBuildInputs = [ sqlite ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Bindings to Sqlite3 for GNU Guile";
     homepage = "https://notabug.org/guile-gcrypt/guile-gcrypt";
     license = licenses.gpl3;

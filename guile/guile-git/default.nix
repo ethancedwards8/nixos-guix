@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitLab, guile, libgit2, bytestructures, autoreconfHook
+{ lib, stdenv, fetchFromGitLab, guile, libgit2, bytestructures, autoreconfHook
 , pkg-config, texinfo }:
 
 stdenv.mkDerivation rec {
@@ -21,7 +21,7 @@ stdenv.mkDerivation rec {
   buildInputs = [ guile ];
   propagatedBuildInputs = [ libgit2 bytestructures ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Bindings to Libgit2 for GNU Guile";
     homepage = "https://gitlab.com/guile-git/guile-git";
     license = licenses.gpl3;

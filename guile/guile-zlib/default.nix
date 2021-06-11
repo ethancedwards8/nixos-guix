@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, guile, libgcrypt, autoreconfHook, pkgconfig, texinfo, zlib
+{ lib, stdenv, fetchurl, guile, libgcrypt, autoreconfHook, pkgconfig, texinfo, zlib
 }:
 
 stdenv.mkDerivation rec {
@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ autoreconfHook pkgconfig texinfo ];
   buildInputs = [ guile zlib ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description =
       "Guile-zlib is a GNU Guile library providing bindings to zlib";
     homepage = "https://notabug.org/guile-zlib/guile-zlib";

@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, guile, autoreconfHook, pkg-config }:
+{ lib, stdenv, fetchFromGitHub, guile, autoreconfHook, pkg-config }:
 
 stdenv.mkDerivation rec {
   pname = "scheme-bytestructures";
@@ -19,7 +19,7 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ autoreconfHook pkg-config ];
   buildInputs = [ guile ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Structured access to bytevector contents";
     homepage = "https://github.com/TaylanUB/scheme-bytestructures";
     license = licenses.gpl3;

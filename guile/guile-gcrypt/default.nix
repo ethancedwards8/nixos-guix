@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, guile, libgcrypt, autoreconfHook, pkgconfig, texinfo }:
+{ lib, stdenv, fetchurl, guile, libgcrypt, autoreconfHook, pkgconfig, texinfo }:
 
 stdenv.mkDerivation rec {
   pname = "guile-gcrypt";
@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
   buildInputs = [ guile ];
   propagatedBuildInputs = [ libgcrypt ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Bindings to Libgcrypt for GNU Guile";
     homepage = "https://notabug.org/cwebber/guile-gcrypt";
     license = licenses.gpl3;
