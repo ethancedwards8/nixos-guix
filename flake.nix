@@ -27,5 +27,16 @@
       defaultPackage = forAllSystems (system: self.packages.${system}.guix);
 
       nixosModules = { guix = import ./module; };
+
+      devShell = forAllSystems (system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+        in
+        pkgs.mkShell {
+          name = "nixos-guix-cli-devShell";
+          nativeBuildInputs = with pkgs; [ git guile];
+        }
+      );
+
     };
 }

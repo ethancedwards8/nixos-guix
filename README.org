@@ -4,18 +4,18 @@ Guix - For NixOS
 Notes:
 This project waws originally started by @yoctocell on GitHub
 and later forked by @emiller88 and @bqv as they patched it in
-various ways. I aim to (somewhat) maintain their work by fixing
-any bugs I find, and provide a binary cache.
+various ways. We aim to (somewhat) maintain their work by fixing
+any bugs that are found, and provide a binary cache.
 
 * Binary Cache
 
-I found that it takes an extraordinary amount of time to build
-this project, even on a fast machine. So I setup a GHA workflow
+We found that it takes an extraordinary amount of time to build
+this project, even on a fast machine. So we setup a GHA workflow
 and a cachix cache to aid in this:
 
 =cachix use ethancedwards8=
 
 * Long term goal
 
-Hopefully, I can upstream these various guile and guix packages
-to nixpkgs and hopefully our own binary cache won't be necessary.
+Hopefully, we can upstream these various guile and guix packages
+to nixpkgs and then our own binary cache won't be necessary.
