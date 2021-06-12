@@ -3,11 +3,11 @@
 
 stdenv.mkDerivation rec {
   pname = "guile-zlib";
-  version = "0.0.1";
+  version = "v0.1.0";
 
   src = fetchurl {
     url = "https://notabug.org/guile-zlib/${pname}/archive/${version}.tar.gz";
-    sha256 = "sha256-8RAL5t0xsCmDz0mBVb8RFVyoM0IfmWmPKeVpQxczX7E=";
+    sha256 = "sha256-JccmtXCgbSG8b9fsYJPzd8dJzi790dFRasG1lfP5Tuk=";
   };
 
   postConfigure = ''

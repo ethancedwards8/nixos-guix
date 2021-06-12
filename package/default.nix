@@ -3,11 +3,11 @@
 
 stdenv.mkDerivation rec {
   pname = "guix";
-  version = "1.2.0";
+  version = "1.3.0";
 
   src = fetchurl {
     url = "mirror://gnu/guix/${pname}-${version}.tar.gz";
-    sha256 = "sha256-Xs33ztJbH7DKfFfnlLe2DIp63LFSYd7CrzeSXIOMbXQ=";
+    sha256 = "sha256-yw9GHEjVgj3+9/iIeaF5c37hTE3ZNzLWcZMvxOJQU+g=";
   };
 
   postConfigure = ''
