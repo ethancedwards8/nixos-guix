@@ -2,8 +2,9 @@
   description = "A package and module for using GNU Guix on Nix(OS)";
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  inputs.flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs, flake-compat }:
     let
       forAllSystems =
         nixpkgs.lib.genAttrs [ "x86_64-linux" "i686-linux" "aarch64-linux" ];
