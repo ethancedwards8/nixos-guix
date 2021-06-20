@@ -2,10 +2,10 @@ Guix - For NixOS
 -----
 
 Notes:
-This project waws originally started by @yoctocell on GitHub
-and later forked by @emiller88 and @bqv as they patched it in
-various ways. We aim to (somewhat) maintain their work by fixing
-any bugs that are found, and provide a binary cache.
+This project was originally started by @bqv on GitHub
+and later forked by @emiller88 and then @yoctocell as they patched
+and maintained it in various ways. We aim to (somewhat) maintain
+their work by fixing any bugs that are found, and provide a binary cache.
 
 * Binary Cache
 
