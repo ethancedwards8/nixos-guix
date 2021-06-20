@@ -1,7 +1,7 @@
 {
   description = "A package and module for using GNU Guix on Nix(OS)";
 
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs";
   inputs.flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
 
   outputs = { self, nixpkgs, flake-compat }:
