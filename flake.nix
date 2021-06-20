@@ -1,7 +1,7 @@
 {
   description = "A package and module for using GNU Guix on Nix(OS)";
 
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
   inputs.flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
 
   outputs = { self, nixpkgs, flake-compat }:
@@ -15,9 +15,7 @@
         in rec {
           guix = prev.callPackage ./package { inherit guilePackages; };
           inherit (guilePackages)
-            guile-gnutls guile-gcrypt guile-git guile-json guile-sqlite3
-            guile-ssh;
-          scheme-bytestructures = guilePackages.bytestructures;
+            guile-gnutls guile-sqlite3 guile-ssh;
         };
 
       packages = forAllSystems (system:

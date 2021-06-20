@@ -15,17 +15,17 @@ stdenv.mkDerivation rec {
     sed -i '/guileobjectdir\s*=/s%=.*%=''${out}/share/guile/ccache%' Makefile;
   '';
 
-  modules = with guilePackages;
+  modules =
     lib.forEach [
-      guile-gcrypt
-      guile-git
-      guile-json
-      guile-lzlib
-      guile-sqlite3
-      guile-ssh
-      guile-gnutls
-      guile-zlib
-      bytestructures
+      pkgs.guile-gcrypt
+      pkgs.guile-git
+      pkgs.guile-json
+      guilePackages.guile-lzlib
+      guilePackages.guile-sqlite3
+      guilePackages.guile-ssh
+      guilePackages.guile-gnutls
+      guilePackages.guile-zlib
+      pkgs.scheme-bytestructures
     ] (m: (m.override { inherit guile; }).out);
 
   nativeBuildInputs = [ pkg-config makeWrapper ];
