@@ -10,6 +10,8 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-yw9GHEjVgj3+9/iIeaF5c37hTE3ZNzLWcZMvxOJQU+g=";
   };
 
+  enableParallelBuilding = true;
+
   postConfigure = ''
     sed -i '/guilemoduledir\s*=/s%=.*%=''${out}/share/guile/site%' Makefile;
     sed -i '/guileobjectdir\s*=/s%=.*%=''${out}/share/guile/ccache%' Makefile;
