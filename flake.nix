@@ -15,7 +15,9 @@
         in rec {
           guix = prev.callPackage ./package { inherit guilePackages; };
           inherit (guilePackages)
-            guile-gnutls guile-sqlite3 guile-ssh;
+            guile-gnutls guile-gcrypt guile-git guile-json guile-sqlite3
+            guile-ssh;
+          scheme-bytestructures = guilePackages.bytestructures;
         };
 
       packages = forAllSystems (system:

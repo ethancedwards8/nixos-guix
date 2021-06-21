@@ -18,7 +18,15 @@ let
     in {
       inherit guile-gnutls;
 
+      guile-gcrypt = callPackage ./guile-gcrypt { };
+
+      bytestructures = callPackage ./bytestructures { };
+
       lzlib = callPackage ./lzlib { };
+
+      guile-git = callPackage ./guile-git { };
+
+      guile-json = callPackage ./guile-json { };
 
       guile-lzlib = callPackage ./guile-lzlib { };
 
